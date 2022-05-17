@@ -6,10 +6,12 @@
             }
     },
     "DATABASE": {
-        "HOST": "127.0.0.1",
+        "HOST": "db",
         "USER": "postgres",
         "PASSWORD": "qwer1234",
         "PORT": 5432,
-        "DB_NAME": "clients_test_db"
+        "DB_NAME": "test_db"
     }
 }
+
+

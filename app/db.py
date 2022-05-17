@@ -16,7 +16,7 @@ db.bind(provider='postgres',
 
 
 class User(db.Entity):
-    _table_ = 'test_users'
+    _table_ = 'test_db'
     id = orm.PrimaryKey(int, auto=True)
     time = orm.Optional(datetime.time)
     connection_date = orm.Required(datetime.date)
@@ -33,3 +33,7 @@ class UserManager(object):
             connection_date=data['date']
         )
         return User
+
+    @db_session
+    def get_count_visits(self):
+        return select((p, count(p)) for p in User.select()).count()
